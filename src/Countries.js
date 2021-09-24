@@ -3,11 +3,11 @@ import Country from "./Country";
 
 const Countries = ({ countries }) => {
   return (
-    <div>
+    <section className="countries">
       {countries.map((country, index) => {
         return <Country key={index} {...country}></Country>;
       })}
-    </div>
+    </section>
   );
 };
 

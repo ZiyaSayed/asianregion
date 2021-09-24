@@ -10,7 +10,6 @@ const url = "https://restcountries.com/v3/region/Asia";
 function App() {
   const [loading, setLoading] = useState(true);
   const [country, setCountry] = useState([]);
-  // const [value, setValue] = useState(0);
 
   const fetchCountries = async () => {
     setLoading(true);
