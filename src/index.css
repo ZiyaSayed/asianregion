@@ -9,21 +9,29 @@
 :root {
   --purple1: #e0c3f8;
   --purple2: #f0dffd;
-  --bg: #f3ebfa;
+  --bg: #e5f2f5;
 }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: var(--bg);
   line-height: 1.5;
   font-size: 0.875rem;
-  max-width: 90%;
+  max-width: 95%;
+  margin: 0rem auto;
 }
 
 h1 {
-  color: black;
+  color: #0096c7;
+  font-size: 2rem;
+}
+
+h3 {
+  color: #48cae4;
   font-size: 1rem;
 }
+
 ul {
   list-style-type: none;
 }
@@ -31,20 +39,71 @@ a {
   text-decoration: none;
 }
 
+p {
+  color: #03045e;
+}
+
 img {
-  width: 10rem;
+  display: block;
+  margin-right: 0rem auto;
+  object-fit: fill;
+  width: 100%;
+}
+
+.countryImage {
+  display: flex;
+  align-items: center;
 }
 .countries {
   display: grid;
   grid-template-columns: repeat(1, auto);
+  margin-top: 2rem;
 }
 
 .country {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
+  margin-bottom: 2rem;
+  background: #daeef3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 19rem;
+  padding-bottom: 1rem;
 }
 
 .countryInfo {
   display: flex;
   flex-direction: column;
+  padding-left: 0.5rem;
+  flex: 1;
+}
+
+button {
+  margin-top: 2rem;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  background: #023e8a;
+  text-transform: uppercase;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 650px) {
+  .countries {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (min-width: 1030px) {
+  .countries {
+    grid-template-columns: repeat(3, auto);
+  }
 }

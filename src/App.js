@@ -41,7 +41,9 @@ function App() {
 
   return (
     <main>
-      <button onClick={fetchCountries}>Refresh</button>
+      <div className="btn">
+        <button onClick={fetchCountries}>Refresh</button>
+      </div>
       <Countries countries={country} />
     </main>
   );

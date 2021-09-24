@@ -9,34 +9,47 @@ const Country = ({
   languages,
   borders,
 }) => {
-  const [border, setBorder] = useState("");
-  const [language, setLanguage] = useState("");
+  const [border, setBorder] = useState([]);
+  const [language, setLanguage] = useState([]);
 
   useEffect(() => {
     if (borders) {
-      setBorder(borders.join(","));
+      setBorder(borders);
     } else {
-      setBorder("loading...");
+      setBorder(["Loading..."]);
     }
   }, [border]);
 
   useEffect(() => {
     if (languages) {
-      setLanguage(Object.values(languages).join(","));
+      setLanguage(Object.values(languages));
     } else {
-      setLanguage("loading...");
+      setLanguage(["loading..."]);
     }
-  }, [languages]);
+  }, [language]);
 
   return (
     <div className="country">
       <div className="countryInfo">
         <h1>{name.common}</h1>
+        <h3>Capital</h3>
         <p>{capital[0]}</p>
+        <h3>Region</h3>
         <p>{region}</p>
+        <h3>Subregion</h3>
         <p>{subregion}</p>
-        <p>{border}</p>
-        <p>{language}</p>
+        <h3>Borders</h3>
+        <p className="border">
+          {border.map((b, index) => {
+            return <li key={index}>{b}</li>;
+          })}
+        </p>
+        <h3>Languages</h3>
+        <p className="language">
+          {language.map((l, index) => {
+            return <li key={index}>{l}</li>;
+          })}
+        </p>
       </div>
 
       <div className="countryImage">
